@@ -1,6 +1,11 @@
+import sys
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
 from stats import count_characters, sort_characters
 
-with open("./books/frankenstein.txt") as f:
+with open(sys.argv[1]) as f:
     book = f.read()
 
 character_counts = count_characters(book)
@@ -9,7 +14,7 @@ sorted_chars = sort_characters(character_counts)
 
 # Print the report
 print("============ BOOKBOT ============")
-print("Analyzing book found at books/frankenstein.txt...")
+print(f"Analyzing book found at {sys.argv[1]}")
 print("----------- Word Count ----------")
 # Count words by splitting the text
 words = book.split()
