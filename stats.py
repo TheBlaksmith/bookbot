@@ -8,6 +8,21 @@ def count_characters(text):
             char_counts[char] = 1
     return char_counts
 
+def sort_characters(char_counts):
+    # Create a list of dictionaries
+    chars_list = []
+    for char, count in char_counts.items():
+        chars_list.append({"char": char, "count": count})
+    
+    # Define a sorting function
+    def sort_on(dict):
+        return dict["count"]
+    
+    # Sort the list from greatest to least
+    chars_list.sort(reverse=True, key=sort_on)
+    
+    return chars_list
+
 book = ""
 letter_count = {}
 with open("./books/frankenstein.txt") as f:
