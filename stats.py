@@ -1,8 +1,15 @@
-get_book_text = ""
+def count_characters(text):
+    char_counts = {}
+    lowercase_text = text.lower()
+    for char in lowercase_text:
+        if char in char_counts:
+            char_counts[char] += 1
+        else:
+            char_counts[char] = 1
+    return char_counts
 
+book = ""
+letter_count = {}
 with open("./books/frankenstein.txt") as f:
-    get_book_text = f.read()
-
-all_words = get_book_text.split()
-num_words = len(all_words)
-
+    book = f.read()
+character_counts = count_characters(book)

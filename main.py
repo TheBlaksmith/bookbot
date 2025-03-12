@@ -1,3 +1,3 @@
-from stats import num_words
+from stats import character_counts
 
-print(f"{num_words} words found in the document")
+print(character_counts)
