@@ -22,9 +22,3 @@ def sort_characters(char_counts):
     chars_list.sort(reverse=True, key=sort_on)
     
     return chars_list
-
-book = ""
-letter_count = {}
-with open("./books/frankenstein.txt") as f:
-    book = f.read()
-character_counts = count_characters(book)

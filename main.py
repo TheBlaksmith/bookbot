@@ -1,13 +1,10 @@
 from stats import count_characters, sort_characters
 
-# Read the book
 with open("./books/frankenstein.txt") as f:
     book = f.read()
 
-# Get character counts
 character_counts = count_characters(book)
 
-# Get sorted characters
 sorted_chars = sort_characters(character_counts)
 
 # Print the report
